@@ -9,7 +9,7 @@ def print_Board(board):
     print('-+-+-')
     print(board['bot-L'] + '|' + board['bot-M'] + '|' + board['bot-R'])
 
-def win_check(board, last_move):
+"""def win_check(board, last_move):
     if (board['top-L'] == 'X' or  board['top-L'] == board['top-M'] and board['top-L'] == board['top-R'] 
     or board['mid-L'] == board['mid-M'] and board['mid-L'] == board['mid-R']
     or board['bot-L'] == board['bot-M'] and board['bot-L'] == board['bot-R']
@@ -21,7 +21,7 @@ def win_check(board, last_move):
         print_Board(the_board)
         print('Player ' + last_move + ' won!')
         return True
-        
+   """     
 
 turn = 'X'
 for i in range(9):
@@ -29,9 +29,7 @@ for i in range(9):
     print('Turn for ' + turn + '. Move on which space?')
     move = input()
     the_board[move] = turn
-    if win_check(the_board, turn) == True:
-        break
-    elif turn == 'X':
+    if turn == 'X':
         turn = 'O'
     else:
         turn = 'X'
